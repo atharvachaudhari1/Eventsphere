@@ -8,6 +8,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Fixed
+- Upgraded Gemini model from `gemini-2.5-flash` (deprecated/404) to `gemini-3.6-flash` across App.jsx, src/aiService.js, and src/constants.js
+
 ### Added
 - `src/components/` — Full reusable component library (16 components)
 - `src/aiService.js` — Extracted Gemini AI service with streaming & prompt templates

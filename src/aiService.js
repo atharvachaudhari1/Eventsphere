@@ -4,7 +4,7 @@
  */
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const MODEL   = "gemini-2.5-flash";
+const MODEL   = "gemini-3.6-flash";
 const STREAM_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:streamGenerateContent?alt=sse&key=`;
 
 /**
