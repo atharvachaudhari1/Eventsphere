@@ -24,12 +24,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,   // disable sourcemaps in prod (hides source code)
-    minify: 'esbuild',  // fast minification
+    minify: 'oxc',      // Vite 8 default (rolldown/OXC — esbuild no longer bundled)
     rollupOptions: {
       output: {
-        // Split vendor chunks for better caching
-        manualChunks: {
-          react: ['react', 'react-dom'],
+        // Split vendor chunks for better caching (must be a function in Vite 8 / rolldown)
+        manualChunks: (id) => {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react-vendor';
+          }
         },
       },
     },
